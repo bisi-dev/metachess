@@ -245,7 +245,7 @@ html[data-theme="dark"] {
 }
 
 .heHzCe {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.8);
 	max-width: 592px;
 	font-size: 16px;
 	font-weight: 300;
@@ -784,7 +784,7 @@ html[data-theme="dark"] {
 	font-weight: 200;
 	font-size: 20px;
 	opacity: 0.8;
-	color: rgb(136, 141, 155);
+	/* color: rgb(136, 141, 155); */
 }
 
 @media (max-width: 640px) {
