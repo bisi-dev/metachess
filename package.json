@@ -25,5 +25,8 @@
       "import": "./dist/fonts.css",
       "require": "./dist/fonts.css"
     }
+  },
+  "resolutions": {
+    "@walletconnect/ethereum-provider": "1.7.1"
   }
 }
