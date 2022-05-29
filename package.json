@@ -245,5 +245,12 @@
     "redux-undo": "^1.0.1",
     "ui-box": "^5.0.0",
     "use-redux-form": "^1.1.2"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "^7.17.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.1.2"
   }
 }
