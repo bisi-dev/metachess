@@ -2,10 +2,28 @@
   "name": "metachess",
   "version": "1.0.0",
   "description": "MetaChess | DApp",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": ".",
   "author": "Ayodeji Olabisi",
-  "license": "ISC"
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./locales/*": {
+      "import": "./dist/locales/*.js",
+      "require": "./dist/cjs/locales/*.cjs"
+    },
+    "./fonts.css": {
+      "import": "./dist/fonts.css",
+      "require": "./dist/fonts.css"
+    }
+  }
 }
