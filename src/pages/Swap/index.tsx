@@ -398,7 +398,15 @@ export default function Swap({ history }: RouteComponentProps) {
       />
       <AppBody>
         <SwapHeader allowedSlippage={allowedSlippage} />
-        <div>Chess Engine will go in here</div>
+        <div>
+          <iframe
+            className="iframe"
+            id="myFrame"
+            src="https://meta-chess-draft.netlify.app/"
+            width="1100"
+            height="800"
+          ></iframe>
+        </div>
         <Wrapper id="swap-page">
           <AutoColumn gap={'sm'}>
             <div style={{ display: 'relative' }}></div>
