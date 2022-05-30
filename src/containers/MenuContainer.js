@@ -3,6 +3,16 @@ import { FlexRow, Text } from 'ui/es';
 import { Menu } from '~/components';
 import { ONLINE } from '~/presets';
 import { joinNetworkGame } from '~/store/actions';
+import contract from "~/utils/contract.ts";
+
+const queryParams = new URLSearchParams(window.location.search);
+const id = queryParams.get('id');
+
+// function GetContractBalance() {
+//   contract.methods.getContractBalance().call().then( function( result ) {
+//     console.log("balance: ", result);
+//   });
+// }
 
 function mapStateToProps({
   general: { lastSaved },
@@ -17,12 +27,59 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mergeProps(stateProps, dispatchProps, ownProps) {
-  // const noUndoYet = stateProps.past.length === 0;
   const isConnected = stateProps.connected;
-  // const lastSaved = stateProps.lastSaved
-    // ? `/ ${toLocaleDate(stateProps.lastSaved)}`
-    // : '';
   const { dispatch } = dispatchProps;
+  
+  function ConnectAsClient() {
+    contract
+    .methods.
+    joinAsClient()
+    .send( {from: id})
+    .catch((error) => {
+      alert('User Rejected Transaction. Please, retry to join the MetaChess community')
+      if (error?.code !== 4001) {
+        alert('Please, retry to join the MetaChess community')
+      }
+    })
+  }
+  
+  function  host(){
+    var exit = false
+
+    if(id == null || id == "Connect_Wallet"){
+      alert('Please Connect Wallet')
+      exit = true
+    } else {
+      ConnectAsClient()
+    }
+
+    setTimeout(
+      function(){
+        if (exit == false){
+          alert("Please Share your Chess-Id with friend ↗")
+        }
+      }
+    ,10000);
+  }
+  
+  function  join(){
+    var exit = false
+
+    if(id == null || id == "Connect_Wallet"){
+      alert('Please Connect Wallet')
+      exit = true
+    } else {  
+      ConnectAsClient()
+    }
+
+    setTimeout(
+      function(){
+        if (exit == false){
+          dispatch(joinNetworkGame())
+        }
+      }
+    ,30000);
+  }
 
   return {
     ...stateProps,
@@ -30,60 +87,19 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
     ...ownProps,
 
     ingameMenu: [
-      // {
-      //   key: ActionTypes.UNDO,
-      //   title: 'Undo',
-      //   disabled: noUndoYet || isConnected,
-      //   onClick: () => dispatch(undo()),
-      // },
-      // {
-      //   key: ActionTypes.REDO,
-      //   title: 'Redo',
-      //   disabled: future.length === 0,
-      // },
     ],
     mainMenu: [
-      //Touched By Babs
-      // {
-      //   key: ONE_VS_ONE,
-      //   title: '1 vs 1',
-      //   disabled: isConnected,
-      //   onClick: () => dispatch(updateMatchType(ONE_VS_ONE)),
-      // },
-      // {
-      //   key: ONE_VS_CPU,
-      //   title: '1 vs CPU',
-      //   disabled: true,
-      // },
-      // {
-      //   key: SAVE,
-      //   title: `Save ${lastSaved}`,
-      //   disabled: noUndoYet || isConnected,
-      //   onClick: () => dispatch(saveGame()),
-      // },
-      // {
-      //   key: IMPORT,
-      //   title: 'Import',
-      //   disabled: isConnected,
-      //   onClick: () => dispatch(importGame()),
-      // },
-      // {
-      //   key: EXPORT,
-      //   title: 'Export',
-      //   disabled: noUndoYet || isConnected,
-      //   onClick: () => dispatch(exportGame()),
-      // },
       {
         key: ONLINE,
         title: 'Host',
         disabled: isConnected,
-        onClick: () => alert("Please Share your Chess-Id with friend ↗"),
+        onClick: () => host(),
       },
       {
         key: ONLINE,
         title: 'Join',
         disabled: isConnected,
-        onClick: () => dispatch(joinNetworkGame()),
+        onClick: () => join(),
         children: () => {
           return (
             <FlexRow paddingLeft={10} paddingRight={10} fontSize="80%">
