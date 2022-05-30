@@ -77,8 +77,10 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
     "ava": "^4.2.0",
     "classnames": "^2.3.1",
+    "dotenv": "^16.0.1",
     "memoize-one": "^6.0.0",
     "peerjs": "^1.4.4",
     "prop-types": "^15.8.1",
@@ -94,8 +96,10 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "redux-undo": "^1.0.1",
+    "truffle": "^5.5.16",
     "ui-box": "^5.0.0",
-    "use-redux-form": "^1.1.2"
+    "use-redux-form": "^1.1.2",
+    "web3": "^1.7.3"
   },
   "workspaces": [
     "packages/chess",
