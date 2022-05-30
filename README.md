@@ -6,18 +6,20 @@ MetaChess is a DApp built with TypeScript, React and Solidity. <br>
 It enables users to enjoy a chess game whilst promoting a positive social impact project on the blockchain.
 * The MetaChess DApp spins up an instance where 2 players must pay a challenge fee (contribute to a pot) to play.
 * A smart contract acts as an escrow/proctor and monitors the game.
-* When the game ends, the smart contract awards the winner the total pot amount - a donation fee(10%) to a charity's address.
+* When the game ends, the smart contract awards the winner 90% of the total pot amount. 
+* It also sends a donation fee (10% of the total pot amount) to the charity's address.
 
 <a href="https://bisi-dev.github.io/metachess/" target="_blank"><strong>>> LIVE INTRO WEB APP</strong></a>
 <br>
 <a href="https://metachess.netlify.app/" target="_blank"><strong>>> LIVE DAPP</strong></a>
+<br>
+<a href="https://github.com/bisi-dev/metachess/tree/chess-engine" target="_blank"><strong>>> CONTRACTS BRANCH</strong></a>
 
-· <a href="#how-to-start">How to Start</a>· <a href="#feedback">Feedback</a>· <a href="#license">License</a>
-
+· <a href="#how-to-start-dev">How to Start DEV</a>· <a href="#feedback">Feedback</a>· <a href="#references">References</a>
 
 ---
 
-## How to Start (DEV)
+## How to Start DEV
 
 
 Pre-Requisites: Node JS, NPM, NVM
@@ -39,7 +41,7 @@ After Forking/Cloning the main branch, you can get up and running in just a few 
 
 3. **Voila! View app in any browser at http://localhost:3000/**
 
-NOTE: To interact/work directly with the DApp, please switch to the DApp branch for more details <a href="https://instatweet.eu-gb.mybluemix.net/" target="_blank"><strong>chess-engine</strong></a>
+NOTE: To interact/work directly with the contracts, please switch to the chess-engine branch for more details <a href="https://github.com/bisi-dev/metachess/tree/chess-engine" target="_blank"><strong>chess-engine</strong></a>
 
 ---
 ## Feedback
