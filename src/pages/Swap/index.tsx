@@ -388,6 +388,11 @@ export default function Swap({ history }: RouteComponentProps) {
 
   const priceImpactTooHigh = priceImpactSeverity > 3 && !isExpertMode
 
+  let engineURL = `https://metachess-engine.netlify.app?id=` + account
+  if (account === null) {
+    engineURL = `https://metachess-engine.netlify.app?id=` + `Connect_Wallet`
+  }
+
   return (
     <>
       <TokenWarningModal
@@ -399,13 +404,7 @@ export default function Swap({ history }: RouteComponentProps) {
       <AppBody>
         <SwapHeader allowedSlippage={allowedSlippage} />
         <div>
-          <iframe
-            className="iframe"
-            id="myFrame"
-            src="https://meta-chess-draft.netlify.app/"
-            width="1100"
-            height="800"
-          ></iframe>
+          <iframe className="iframe" id="myFrame" src={engineURL} width="1100" height="800"></iframe>
         </div>
         <Wrapper id="swap-page">
           <AutoColumn gap={'sm'}>

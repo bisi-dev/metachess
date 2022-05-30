@@ -6,7 +6,6 @@ import { ArrowUpRight } from 'react-feather'
 import { useDarkModeManager } from 'state/user/hooks'
 import styled from 'styled-components/macro'
 import { ExternalLink, HideSmall } from 'theme'
-
 import { AutoRow } from '../Row'
 
 const L2Icon = styled.img`
@@ -158,10 +157,13 @@ export function NetworkAlert() {
             <L2Icon src={logoUrl} />
             <AutoRow>
               <Header>
-                <Trans>{label} token bridge</Trans>
+                <Trans>
+                  {label}
+                  {/* token bridge */}
+                </Trans>
               </Header>
               <HideSmall>
-                <Trans>Deposit tokens to the {label} network.</Trans>
+                <Trans>.{/* Deposit tokens to the {label} network. */}</Trans>
               </HideSmall>
             </AutoRow>
           </BodyText>

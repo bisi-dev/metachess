@@ -1,5 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { Percent } from '@uniswap/sdk-core'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import styled from 'styled-components/macro'
 import { ThemedText } from '../../theme'
 import { RowBetween, RowFixed } from '../Row'
@@ -12,13 +13,19 @@ const StyledSwapHeader = styled.div`
 `
 
 export default function SwapHeader({ allowedSlippage }: { allowedSlippage: Percent }) {
+  const { chainId } = useActiveWeb3React()
+
+  let warningT = ''
+  if (chainId !== 80001) {
+    warningT = ' - Please use Mumbai Polygon TestNet'
+  }
   return (
     <StyledSwapHeader>
       <RowBetween>
         <RowFixed>
           <ThemedText.Black fontWeight={500} fontSize={16} style={{ marginRight: '8px' }}>
             {/* Touched By Babs */}
-            <Trans>Chess Engine</Trans>
+            <Trans>Chess Engine {warningT}</Trans>
           </ThemedText.Black>
         </RowFixed>
         <RowFixed>

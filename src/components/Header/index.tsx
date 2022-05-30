@@ -308,7 +308,7 @@ export default function Header() {
           </StyledNavLink>
         )} */}
         <StyledExternalLink id={`charts-nav-link`} href={'https://bisi-dev.github.io/metachess/'}>
-          <Trans>Explore</Trans>
+          <Trans>Whitepaper</Trans>
           <sup>↗</sup>
         </StyledExternalLink>
       </HeaderLinks>

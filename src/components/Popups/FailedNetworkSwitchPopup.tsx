@@ -4,7 +4,6 @@ import { SupportedChainId } from 'constants/chains'
 import { useContext } from 'react'
 import { AlertCircle } from 'react-feather'
 import styled, { ThemeContext } from 'styled-components/macro'
-
 import { ThemedText } from '../../theme'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
@@ -25,8 +24,8 @@ export default function FailedNetworkSwitchPopup({ chainId }: { chainId: Support
       <AutoColumn gap="8px">
         <ThemedText.Body fontWeight={500}>
           <Trans>
-            Failed to switch networks from the Uniswap Interface. In order to use Uniswap on {chainInfo.label}, you must
-            change the network in your wallet.
+            Failed to switch networks from the Uniswap Interface. In order to use MetaChess on {chainInfo.label}, you
+            must change the network in your wallet.
           </Trans>
         </ThemedText.Body>
       </AutoColumn>
