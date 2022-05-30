@@ -55,7 +55,7 @@ export function connectedPeerNetwork() {
 
 export function joinNetworkGame() {
   return (dispatch) => {
-    const id = window.prompt('please input friend peer-id');
+    const id = window.prompt('please input friend Chess-id');
 
     if (id) {
       batch(() => {
