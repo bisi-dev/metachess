@@ -11,11 +11,19 @@ It enables users to enjoy a chess game whilst promoting a positive social impact
 
 <a href="https://bisi-dev.github.io/metachess/" target="_blank"><strong>>> LIVE INTRO WEB APP</strong></a>
 <br>
-<a href="https://metachess.netlify.app/" target="_blank"><strong>>> LIVE DAPP</strong></a>
+<a href="https://metachess.netlify.app/#/swap?chain=polygon_mumbai" target="_blank"><strong>>> LIVE DAPP</strong></a>
 <br>
+<a href="https://mumbai.polygonscan.com/address/0xd7641a65ac635acc75ac9dc071b02b6f2b6f522d#code" target="_blank"><strong>>> SMART CONTRACTS - POLYGONSCAN (MUMBAI TESTNET)</strong></a>
+<br>
+
+<a href="https://vimeo.com/715516668" target="_blank"><strong>>> HOW TO USE: VIDEO-DEMO</strong></a>
+<br>
+[![Watch the video](https://storage.googleapis.com/bisiweb.appspot.com/videoNail.PNG)](https://vimeo.com/715516668)
+<br>
+
 <a href="https://github.com/bisi-dev/metachess" target="_blank"><strong>>> DAPP BRANCH</strong></a>
 
-· <a href="#how-to-start-dev">How to Start DEV</a>· <a href="#feedback">Feedback</a>· <a href="#references">References</a>
+· <a href="#how-to-start-dev">How to Start DEV</a>· <a href="#contracts">Contracts</a>· <a href="#feedback">Feedback</a>· <a href="#references">References</a>
 
 ---
 
@@ -49,6 +57,46 @@ After Forking/Cloning the chess-engine branch, you can get up and running in jus
 3. **Voila! View app in any browser at http://localhost:3000/**
 
 NOTE: To interact/work directly with the DApp, please switch to the main branch for more details <a href="https://github.com/bisi-dev/metachess" target="_blank"><strong>main</strong></a>
+
+## Contracts
+
+The smart contracts are included in this branch. To work with:
+
+
+1. **Create a Polygon Mumbai Wallet Address and add some funds to your address.**
+
+   <a href="https://faucet.matic.network/" target="_blank"><strong>>> POLYGON MUMBAI FAUCET</strong></a>
+   <br>
+   Select Mumbai -> Paste wallet address -> Submit
+
+2. **Create a project/app on Infura**
+
+   <a href="https://infura.io/" target="_blank"><strong>>> INFURA</strong></a>   
+
+3. **Edit the .env file and set your mnemonic and Infura ID.**
+   
+   ```
+   MNEMONIC= <12 secret words here>
+   PROJECT_ID= <Infura Polygon Project ID>
+   ```
+   
+4. **Compile Contracts**
+   
+   ```
+   truffle compile
+   ```
+   
+7. **Deploy Contracts**
+   
+   ```
+   truffle migrate --network matic
+   ```
+   
+9. **Copy your contract address and view on PolygonScan (Mumbai TestNet)**
+
+   ```
+   https://mumbai.polygonscan.com/address/ + {contract address}
+   ```
 
 ---
 ## Feedback
