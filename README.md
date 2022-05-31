@@ -9,7 +9,7 @@ It enables users to enjoy a chess game whilst promoting a positive social impact
 * When the game ends, the smart contract awards the winner 90% of the total pot amount. 
 * It also sends a donation fee (10% of the total pot amount) to the charity's address.
 
-<a href="https://bisi-dev.github.io/metachess/" target="_blank"><strong>>> LIVE INTRO WEB APP</strong></a>
+<a href="https://2xplay-01ebf0.webflow.io" target="_blank"><strong>>> LIVE INTRO WEB APP</strong></a>
 <br>
 <a href="https://metachess.netlify.app/#/swap?chain=polygon_mumbai" target="_blank"><strong>>> LIVE DAPP</strong></a>
 <br>
