@@ -51,7 +51,7 @@ After Forking/Cloning the chess-engine branch, you can get up and running in jus
    
    
    ```
-   npm run boom
+   npm run start-windows
    ```
 
 3. **Voila! View app in any browser at http://localhost:3000/**
